@@ -479,6 +479,8 @@ def search_flights(query: str, limit: int = 10):
 
     dep_iata, arr_iata = parse_route(query)
 
+    print(f'\nSearch flight route parsed dep: {dep_iata} and arr: {arr_iata}')
+
     params = {
         "access_key": API_KEY,
         "limit": min(limit, 100),
@@ -505,6 +507,8 @@ def search_flights(query: str, limit: int = 10):
             f"Code: {error.get('code', 'Unknown')}\n"
             f"Message: {error.get('message', 'Unknown error')}"
         )
+
+    print('\nFlight Data: ', data)
 
     flight_data = data.get("data", [])
 

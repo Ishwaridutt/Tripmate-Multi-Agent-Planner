@@ -35,5 +35,7 @@ def tavily_search(query, k=5):
 
         results.append(f"{index}. **{title}**\n   {url}\n   {snippet}")
 
+    print(f'\nTavily tool query: {query} and result: ', results)
+
     return "\n\n".join(results)
 
